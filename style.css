@@ -220,11 +220,28 @@ body, html {
 }
 
 
-.video-background video {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover; 
+#background-video {
+  width: 100%;
+  height: 100vh; /
+  object-fit: cover;
 }
+
+
+#background-video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+ 
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  background-size: cover;
+}
+
 
 
 .contenido-texto {
@@ -234,4 +251,22 @@ body, html {
   color: white; 
   padding-top: 100px;
   font-family: Arial, sans-serif;
+
+  
+
+#bg-video {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100vw;   
+  height: 100vh;   
+  object-fit: cover; 
+  z-index: -1;     
+
+
+body {
+  margin: 0;
+  padding: 0;
+  color: white; 
+  font-family: sans-serif;
 }
