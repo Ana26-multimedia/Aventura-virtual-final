@@ -28,7 +28,7 @@ img {
 }
 
 #escena6 { 
-    background-image: url("./assets/Cielo%20Rosado.jpg");
+    background-image: url("assets/Cielo\ Rosado.jpg");
     background-size: cover;
     
 }
@@ -57,7 +57,7 @@ a {
 }
 
 #escena2{ 
-    background-image: url("./assets/\ mar\ .jpg");
+    background-image:url("./assets/_mar\ .jpg")
     background-size: cover;
 }
 
