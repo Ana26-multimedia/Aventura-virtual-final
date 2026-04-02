@@ -270,3 +270,76 @@ body {
   color: white; 
   font-family: sans-serif;
 }
+
+:root {
+  --rocket-color: #f3f3f3;
+  --detail-color: #e74c3c;
+}
+
+.rocket {
+  position: relative;
+  width: 50px;
+  margin: 50px auto; /* Para que se centre */
+  animation: vibration 0.2s infinite;
+}
+
+.nose {
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 40px solid var(--detail-color);
+}
+
+.body {
+  width: 50px;
+  height: 80px;
+  background: var(--rocket-color);
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.window {
+  width: 20px;
+  height: 20px;
+  background: #3498db;
+  border-radius: 50%;
+  border: 3px solid #bdc3c7;
+  margin-top: 15px;
+}
+
+
+.fin {
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 30px solid var(--detail-color);
+}
+
+.fin-left {
+  left: -20px;
+  border-left: 20px solid transparent;
+}
+
+.fin-right {
+  right: -20px;
+  border-right: 20px solid transparent;
+}
+
+.exhaust {
+  width: 30px;
+  height: 40px;
+  background: linear-gradient(to bottom, #f1c40f, transparent);
+  margin: 0 auto;
+  border-radius: 0 0 50% 50%;
+  filter: blur(2px);
+}
+
+@keyframes vibration {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-2px) translateX(1px); }
+  100% { transform: translateY(0); }
+}
+
