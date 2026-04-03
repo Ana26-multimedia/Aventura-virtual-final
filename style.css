@@ -1,4 +1,3 @@
-
 html, body {
   width: 100%;
   height: 100%;
@@ -8,9 +7,7 @@ html, body {
   font-family: sans-serif;
 }
 
-h1 {
-  text-align: center;
-}
+h1 { text-align: center; }
 
 a {
   font-size: 20px;
@@ -32,20 +29,20 @@ img {
   background-size: cover;
 }
 
-#index h1 {
-  font-size: 48px;
-}
-
-#index a {
-  font-size: 24px;
-}
-
-#escena2 { 
-  background-image: url("./assets/mar.jpg");
+#fondo-escena2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("./assets/_mar/.jpg");
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1; 
 }
 
-#escena3 {
+#escena3 { 
   background-color: rgb(121, 179, 240);
 }
 
@@ -53,11 +50,8 @@ img {
   background-image: url("./assets/Cielo%20estrellado.jpg");
   background-size: cover;
 }
-
 #escena4 h1,
-#escena4 a {
-  color: white;
-}
+#escena4 a { color: white; }
 
 #escena5 {
   background-image: url("./assets/Sol.jpg");
@@ -88,14 +82,12 @@ img {
   100% { background-color: rgb(255, 238, 0); }
 }
 
-
 .rayos {
   position: absolute;
   width: 30vw;
   height: 30vw;
   animation: girar 10s linear infinite;
 }
-
 .rayo {
   position: absolute;
   width: 4px;
@@ -105,7 +97,6 @@ img {
   left: 50%;
   transform-origin: bottom center;
 }
-
 .rayo:nth-child(1) { transform: rotate(0deg); }
 .rayo:nth-child(2) { transform: rotate(60deg); }
 .rayo:nth-child(3) { transform: rotate(120deg); }
@@ -122,15 +113,17 @@ img {
 .contenedor-pajaro {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 200px;
+  align-items: flex-start; /* inicia desde arriba */
+  height: 300px;           /* más alto para poder bajar el pájaro */
+  padding-top: 50px;       /* baja el pájaro visualmente */
 }
 
 .pajaro {
   position: relative;
   width: 100px;
   height: 60px;
-  transform: scale(2);
+  transform: scale(2.5);
+  cursor: pointer;
 }
 
 .cuerpo {
@@ -141,7 +134,6 @@ img {
   border-radius: 0 0 100px 100px;
   top: 20px;
 }
-
 .cabeza {
   position: absolute;
   width: 35px;
@@ -151,7 +143,6 @@ img {
   left: 55px;
   top: 0;
 }
-
 .ojo {
   position: absolute;
   width: 6px;
@@ -161,7 +152,6 @@ img {
   left: 75px;
   top: 10px;
 }
-
 .pico {
   position: absolute;
   border-left: 15px solid #f39c12;
@@ -170,7 +160,6 @@ img {
   left: 88px;
   top: 12px;
 }
-
 .ala {
   position: absolute;
   width: 40px;
@@ -188,6 +177,14 @@ img {
   to   { transform: rotate(-60deg); }
 }
 
+@keyframes volar {
+  0%   { transform: translateX(0) translateY(0) scale(2.5); }
+  100% { transform: translateX(400px) translateY(-200px) scale(2.5); }
+}
+
+.pajaro.volando {
+  animation: volar 3s linear forwards;
+}
 
 #bg-video {
   position: fixed;
@@ -199,7 +196,6 @@ img {
   z-index: -1;
 }
 
-
 .contenido-texto {
   position: relative;
   z-index: 1;
@@ -208,19 +204,19 @@ img {
   padding-top: 100px;
 }
 
+
 .rocket-container {
   position: fixed;
-  top: 200px;
   left: 50%;
-  transform: translateX(-50%);
+  top: 300px;
+  transform: translateX(-50%) scale(2);
 }
-
 .rocket {
   position: relative;
   width: 50px;
   height: 150px;
+  animation: vibrar 0.1s infinite;
 }
-
 .nose {
   width: 0;
   height: 0;
@@ -228,13 +224,11 @@ img {
   border-right: 25px solid transparent;
   border-bottom: 40px solid red;
 }
-
 .body {
   width: 50px;
   height: 80px;
   background: white;
 }
-
 .window {
   width: 20px;
   height: 20px;
@@ -242,7 +236,6 @@ img {
   border-radius: 50%;
   margin: 10px auto;
 }
-
 .fin-left {
   position: absolute;
   left: -20px;
@@ -250,7 +243,6 @@ img {
   border-bottom: 30px solid red;
   border-left: 20px solid transparent;
 }
-
 .fin-right {
   position: absolute;
   right: -20px;
@@ -259,50 +251,20 @@ img {
   border-right: 20px solid transparent;
 }
 
-
-.rocket-container {
-  position: fixed;
-  left: 50%;
-  top: 300px;
-
-  transform: translateX(-50%) scale(2);
-}
-
-
-.rocket {
-  animation: vibrar 0.1s infinite;
-}
-
 @keyframes vibrar {
   0% { transform: translate(0, 0); }
   50% { transform: translate(1px, -2px); }
   100% { transform: translate(0, 0); }
 }
 
-
-.rocket-container {
-  position: fixed;
-  right: 50px;
-  top: 300px;
-  transform: scale(2);
-}
-
-
 .despegar {
-  animation: despegar 2s ease-in-out;
+  animation: despegar 2s ease-in-out forwards;
 }
-
-/* animación */
 @keyframes despegar {
-  from {
-    transform: scale(2) translateY(0);
-  }
-  to {
-    transform: scale(2) translateY(-300px);
-  }
+  from { transform: scale(2) translateY(0); }
+  to   { transform: scale(2) translateY(-400px); }
 }
 
-/* BOTÓN */
 #launchBtn {
   position: fixed;
   bottom: 50px;
@@ -316,22 +278,31 @@ img {
   border-radius: 10px;
   cursor: pointer;
 }
+#launchBtn:hover { background: darkred; }
 
-/* efecto hover */
-#launchBtn:hover {
-  background: darkred;
+@keyframes volar {
+  0%   { transform: translateX(0) translateY(0) scale(2.5); }
+  100% { transform: translateX(400px) translateY(-200px) scale(2.5); }
 }
 
-/* DESPEGUE */
-.despegar {
-  animation: despegar 2s ease-in-out;
+.pajaro.volando {
+  animation: volar 3s linear forwards;
 }
 
-@keyframes despegar {
-  from {
-    transform: scale(2) translateY(0);
-  }
-  to {
-    transform: scale(2) translateY(-400px);
-  }
+#bg-video {
+  position: fixed;     
+  top: 0;
+  left: 0;
+  width: 100vw;        
+  height: 100vh;      
+  object-fit: cover;  
+  z-index: -1;        
 }
+
+.contenedor-pajaro {
+  position: absolute; 
+  top: 50%;           
+  left: 20%;        
+  transform: translateY(-50%); 
+}
+

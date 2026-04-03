@@ -27,17 +27,37 @@
     <a href="escena2.html">ir a escena 2 </a>
     
     <br>
+
 <div class="contenedor-pajaro">
-  <div class="pajaro">
-    <div class="pico"></div>
+  <div id="pajaro" class="pajaro">
+    <div class="cuerpo"></div>
     <div class="cabeza"></div>
     <div class="ojo"></div>
-    <div class="cuerpo"></div>
+    <div class="pico"></div>
     <div class="ala"></div>
   </div>
 </div>
 
-<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<div class="pajaro" id="pajaro"></div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const pajaro = document.getElementById("pajaro");
+
+  if (pajaro) {
+    pajaro.addEventListener("click", () => {
+      if (pajaro.classList.contains("volando")) return;
+      pajaro.classList.add("volando"); 
+    });
+
+    pajaro.addEventListener("animationend", () => {
+      window.location.href = "escena2.html";
+    });
+  }
+});
+</script>
+
+
 
 </body>
 </html>
