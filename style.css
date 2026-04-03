@@ -1,3 +1,4 @@
+
 html, body {
     width: 100%;
     height: 100%;
@@ -271,16 +272,16 @@ body {
   font-family: sans-serif;
 }
 
-:root {
-  --rocket-color: #f3f3f3;
-  --detail-color: #e74c3c;
+.rocket-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
 }
 
-.rocket {
+.rocket{
   position: relative;
   width: 50px;
-  margin: 50px auto; /* Para que se centre */
-  animation: vibration 0.2s infinite;
+  height: 150px;
 }
 
 .nose {
@@ -288,58 +289,57 @@ body {
   height: 0;
   border-left: 25px solid transparent;
   border-right: 25px solid transparent;
-  border-bottom: 40px solid var(--detail-color);
+  border-bottom: 40px solid red;
 }
 
 .body {
   width: 50px;
   height: 80px;
-  background: var(--rocket-color);
-  position: relative;
-  display: flex;
-  justify-content: center;
+  background: rgb(255, 255, 255);
 }
 
 .window {
   width: 20px;
   height: 20px;
-  background: #3498db;
+  background: blue;
   border-radius: 50%;
-  border: 3px solid #bdc3c7;
-  margin-top: 15px;
-}
-
-
-.fin {
-  position: absolute;
-  bottom: 0;
-  width: 0;
-  height: 0;
-  border-bottom: 30px solid var(--detail-color);
+  margin: 10px auto;
 }
 
 .fin-left {
+  position: absolute;
   left: -20px;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 30px solid red;
   border-left: 20px solid transparent;
 }
 
 .fin-right {
+  position: absolute;
   right: -20px;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 30px solid red;
   border-right: 20px solid transparent;
 }
 
-.exhaust {
-  width: 30px;
-  height: 40px;
-  background: linear-gradient(to bottom, #f1c40f, transparent);
-  margin: 0 auto;
-  border-radius: 0 0 50% 50%;
-  filter: blur(2px);
+.rocket, 
+.rocket * {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
-@keyframes vibration {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-2px) translateX(1px); }
-  100% { transform: translateY(0); }
+.rocket {
+  background: yellow !important;
 }
 
+.rocket-container {
+  position: fixed;
+  top: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+}
