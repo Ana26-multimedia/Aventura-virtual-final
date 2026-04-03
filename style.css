@@ -1,112 +1,110 @@
 
 html, body {
-    width: 100%;
-    height: 100%;
-     margin: 0;
-    padding: 0;
- overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: sans-serif;
 }
 
 h1 {
-   text-align: center;}
-
-img { 
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-#index { 
-    background-image: url("./assets/Nubes%20en%20el%20cielo%20.avif");
-    background-size: cover;
-}
-
-#index h1 {
-    font-size: 48px;
-}
-#index a {
-    font-size: 24px;
-}
-
-#escena6 { 
-    background-image: url("./assets/Cielo\ Rosado.jpg ");
-    background-size: cover;
-    
+  text-align: center;
 }
 
 a {
-    font-size: 20px;
-    padding: 10px 15px;
-    display: inline-block;
-    margin: 10px ;
-    color: #f34eed;
+  font-size: 20px;
+  padding: 10px 15px;
+  display: inline-block;
+  margin: 10px;
+  color: #f34eed;
+}
+
+img { 
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+#index { 
+  background-image: url("./assets/Nubes%20en%20el%20cielo%20.avif");
+  background-size: cover;
+}
+
+#index h1 {
+  font-size: 48px;
+}
+
+#index a {
+  font-size: 24px;
+}
+
+#escena2 { 
+  background-image: url("./assets/mar.jpg");
+  background-size: cover;
+}
+
+#escena3 {
+  background-color: rgb(121, 179, 240);
 }
 
 #escena4 {
-    background-image: url("./assets/Cielo%20estrellado.jpg");
-    background-size: cover;
+  background-image: url("./assets/Cielo%20estrellado.jpg");
+  background-size: cover;
 }
 
 #escena4 h1,
 #escena4 a {
-    color: white;
+  color: white;
 }
 
-#escena5{
-    background-image:url("./assets/Sol.jpg");
-    background-size: cover;
+#escena5 {
+  background-image: url("./assets/Sol.jpg");
+  background-size: cover;
 }
 
-#escena2{ 
-    background-image: url("./assets/\ mar\ .jpg");
-    background-size: cover;
+#escena6 { 
+  background-image: url("./assets/Cielo Rosado.jpg");
+  background-size: cover;
 }
-
-#escena3 {
-background-color: rgb(121, 179, 240);
-}
-
 
 #dibujo {
-    width: 20vw;
-    height: 20vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation-name: cambiarelcolor;
-    animation-duration: 8s;
-    animation-iteration-count: infinite;
-    border-radius: 50%;
-    position: absolute;
-    top: 10%;
-    right: 15%;
+  width: 20vw;
+  height: 20vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: cambiarelcolor 8s infinite;
+  border-radius: 50%;
+  position: absolute;
+  top: 10%;
+  right: 15%;
 }
 
 @keyframes cambiarelcolor {
-    0% { background-color: rgb(188, 100, 0); }
-    50% { background-color: rgb(247, 172, 21); }
-    100% { background-color: rgb(255, 238, 0); }
+  0% { background-color: rgb(188, 100, 0); }
+  50% { background-color: rgb(247, 172, 21); }
+  100% { background-color: rgb(255, 238, 0); }
 }
 
 
 .rayos {
   position: absolute;
-  width: 30vw;   
+  width: 30vw;
   height: 30vw;
   animation: girar 10s linear infinite;
 }
 
-
 .rayo {
   position: absolute;
   width: 4px;
-  height: 8vw;   
+  height: 8vw;
   background: orange;
   top: 0;
   left: 50%;
   transform-origin: bottom center;
 }
-
 
 .rayo:nth-child(1) { transform: rotate(0deg); }
 .rayo:nth-child(2) { transform: rotate(60deg); }
@@ -115,13 +113,13 @@ background-color: rgb(121, 179, 240);
 .rayo:nth-child(5) { transform: rotate(240deg); }
 .rayo:nth-child(6) { transform: rotate(300deg); }
 
-
 @keyframes girar {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
 }
- 
-.contenedor-pajaro  {
+
+
+.contenedor-pajaro {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -132,8 +130,7 @@ background-color: rgb(121, 179, 240);
   position: relative;
   width: 100px;
   height: 60px;
-  transform: scale(2); 
-  transform-origin: center; 
+  transform: scale(2);
 }
 
 .cuerpo {
@@ -141,10 +138,9 @@ background-color: rgb(121, 179, 240);
   width: 80px;
   height: 40px;
   background: #3498db;
-  border-radius: 0 0 100px 100px; /* Forma de media luna */
+  border-radius: 0 0 100px 100px;
   top: 20px;
 }
-
 
 .cabeza {
   position: absolute;
@@ -164,17 +160,13 @@ background-color: rgb(121, 179, 240);
   border-radius: 50%;
   left: 75px;
   top: 10px;
-  z-index: 2;
 }
-
 
 .pico {
   position: absolute;
-  width: 0;
-  height: 0;
+  border-left: 15px solid #f39c12;
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
-  border-left: 15px solid #f39c12;
   left: 88px;
   top: 12px;
 }
@@ -188,97 +180,42 @@ background-color: rgb(121, 179, 240);
   left: 20px;
   top: 15px;
   transform-origin: bottom;
-  animation: fly 0.4s ease-in-out infinite alternate; /
+  animation: fly 0.4s infinite alternate;
 }
-
 
 @keyframes fly {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(-60deg);
-  }
-
-}
-
-body, html {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-60deg); }
 }
 
 
-.video-background {
+#bg-video {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1; 
-  overflow: hidden;
-}
-
-
-#background-video {
-  width: 100%;
-  height: 100vh; /
+  width: 100vw;
+  height: 100vh;
   object-fit: cover;
+  z-index: -1;
 }
-
-
-#background-video {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -100;
- 
-  transform: translate(-50%, -50%);
-  object-fit: cover;
-  background-size: cover;
-}
-
 
 
 .contenido-texto {
   position: relative;
-  z-index: 1; 
+  z-index: 1;
   text-align: center;
-  color: white; 
+  color: white;
   padding-top: 100px;
-  font-family: Arial, sans-serif;
-
-  
-
-#bg-video {
-  position: fixed; 
-  top: 0;
-  left: 0;
-  width: 100vw;   
-  height: 100vh;   
-  object-fit: cover; 
-  z-index: -1;     
-
-
-body {
-  margin: 0;
-  padding: 0;
-  color: white; 
-  font-family: sans-serif;
 }
 
 .rocket-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 100px;
+  position: fixed;
+  top: 200px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.rocket{
+.rocket {
   position: relative;
   width: 50px;
   height: 150px;
@@ -295,7 +232,7 @@ body {
 .body {
   width: 50px;
   height: 80px;
-  background: rgb(255, 255, 255);
+  background: white;
 }
 
 .window {
@@ -310,8 +247,6 @@ body {
   position: absolute;
   left: -20px;
   bottom: 0;
-  width: 0;
-  height: 0;
   border-bottom: 30px solid red;
   border-left: 20px solid transparent;
 }
@@ -320,26 +255,83 @@ body {
   position: absolute;
   right: -20px;
   bottom: 0;
-  width: 0;
-  height: 0;
   border-bottom: 30px solid red;
   border-right: 20px solid transparent;
 }
 
-.rocket, 
-.rocket * {
-  display: block !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-.rocket {
-  background: yellow !important;
-}
 
 .rocket-container {
   position: fixed;
-  top: 200px;
+  left: 50%;
+  top: 300px;
+
+  transform: translateX(-50%) scale(2);
+}
+
+
+.rocket {
+  animation: vibrar 0.1s infinite;
+}
+
+@keyframes vibrar {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(1px, -2px); }
+  100% { transform: translate(0, 0); }
+}
+
+
+.rocket-container {
+  position: fixed;
+  right: 50px;
+  top: 300px;
+  transform: scale(2);
+}
+
+
+.despegar {
+  animation: despegar 2s ease-in-out;
+}
+
+/* animación */
+@keyframes despegar {
+  from {
+    transform: scale(2) translateY(0);
+  }
+  to {
+    transform: scale(2) translateY(-300px);
+  }
+}
+
+/* BOTÓN */
+#launchBtn {
+  position: fixed;
+  bottom: 50px;
   left: 50%;
   transform: translateX(-50%);
+  padding: 15px 25px;
+  font-size: 20px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* efecto hover */
+#launchBtn:hover {
+  background: darkred;
+}
+
+/* DESPEGUE */
+.despegar {
+  animation: despegar 2s ease-in-out;
+}
+
+@keyframes despegar {
+  from {
+    transform: scale(2) translateY(0);
+  }
+  to {
+    transform: scale(2) translateY(-400px);
+  }
 }

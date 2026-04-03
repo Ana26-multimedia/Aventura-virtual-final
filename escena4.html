@@ -7,16 +7,19 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
+<script src="script.js"></script>
+
 <body id="escena4">
 
   <h1>Escena 4, capítulo 4</h1>
 
   <a href="escena3.html">Volver a escena anterior</a><br><br>
   <a href="escena5.html">Ir a escena 5</a>
+  
 
- <p style="color:red;">AQUI DEBERIA ESTAR EL COHETE</p>
+  <button id="launchBtn">🚀 LAUNCH</button>
 
-<div class="rocket-container">
+<div class="rocket-container" id="cohete">
   <div class="rocket">
     <div class="nose"></div>
     <div class="body">
@@ -27,5 +30,13 @@
   </div>
 </div>
 
-</body>
-</html>
+<script>
+  const cohete = document.getElementById("cohete");
+  const boton = document.getElementById("launchBtn");
+
+  boton.addEventListener("click", () => {
+    cohete.classList.remove("despegar");
+    void cohete.offsetWidth;
+    cohete.classList.add("despegar");
+  });
+</script>
