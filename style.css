@@ -6,7 +6,6 @@ html, body {
   overflow-x: hidden;
   font-family: sans-serif;
 }
-
 h1 { text-align: center; }
 
 a {
@@ -22,7 +21,6 @@ img {
   height: auto;
   display: block;
 }
-
 
 #index { 
   background-image: url("./assets/Nubes%20en%20el%20cielo%20.avif");
@@ -50,16 +48,12 @@ img {
   background-image: url("./assets/Cielo%20estrellado.jpg");
   background-size: cover;
 }
+
 #escena4 h1,
 #escena4 a { color: white; }
 
 #escena5 {
   background-image: url("./assets/Sol.jpg");
-  background-size: cover;
-}
-
-#escena6 { 
-  background-image: url("./assets/Cielo Rosado.jpg");
   background-size: cover;
 }
 
@@ -176,7 +170,6 @@ img {
   padding-top: 100px;
 }
 
-
 .rocket-container {
   position: fixed;
   left: 50%;
@@ -261,15 +254,6 @@ img {
   animation: volar 3s linear forwards;
 }
 
-#bg-video {
-  position: fixed;     
-  top: 0;
-  left: 0;
-  width: 100vw;        
-  height: 100vh;      
-  object-fit: cover;  
-  z-index: -1;        
-}
 
 .contenedor-pajaro {
   position: absolute; 
@@ -278,3 +262,126 @@ img {
   transform: translateY(-50%); 
 }
 
+.nube {
+  width: 200px;
+  height: 60px;
+  background: white;
+  border-radius: 50px;
+  position: relative;
+  transform: scale(1.5);
+  margin: 100px auto;
+  
+}
+
+.nube::after,
+.nube::before {
+  content: '';
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+}
+
+.nube::after {
+  width: 100px;
+  height: 100px;
+  top: -50px;
+  left: 20px;
+}
+
+.nube::before {
+  width: 80px;
+  height: 80px;
+  top: -30px;
+  right: 20px;
+}
+
+.nube {
+  
+  position: absolute; 
+  animation: moverNube 15s linear infinite;
+}
+
+@keyframes moverNube {
+  from {
+    left: -250px;
+  }
+  to {
+    left: 100%; 
+  }
+}
+
+.pajaro2 {
+  position: relative;
+  width: 100px;
+  height: 60px;
+  transform: scale(2.5) scaleX(-1); /* Voltea horizontalmente para mirar a la izquierda */
+  cursor: pointer;
+}
+
+.cuerpo2 {
+  position: absolute;
+  width: 80px;
+  height: 40px;
+  background: #3498db;
+  border-radius: 0 0 100px 100px;
+  top: 20px;
+}
+
+.cabeza2 {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background: #3498db;
+  border-radius: 50%;
+  left: 55px;
+  top: 0;
+}
+
+.ojo2 {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  left: 75px;
+  top: 10px;
+}
+
+.pico2 {
+  position: absolute;
+  border-left: 15px solid #f39c12;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  left: 88px;
+  top: 12px;
+}
+
+.ala2 {
+  position: absolute;
+  width: 40px;
+  height: 25px;
+  background: #2980b9;
+  border-radius: 50% 50% 0 0;
+  left: 20px;
+  top: 15px;
+  transform-origin: bottom;
+  animation: fly2 0.4s infinite alternate;
+}
+
+@keyframes fly2 {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-60deg); }
+}
+
+@keyframes volar2 {
+  0%   { transform: translateX(0) translateY(0) scale(2.5) scaleX(-1); }
+  100% { transform: translateX(400px) translateY(-200px) scale(2.5) scaleX(-1); }
+}
+
+.pajaro.volando {
+  animation: volar 3s linear alternate forwards;
+}
+
+.pajaro2.volando2 {
+  animation: volar2 3s linear alternate forwards;
+}
