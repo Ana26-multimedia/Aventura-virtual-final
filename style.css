@@ -35,7 +35,7 @@ img {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url("./assets/_mar/.jpg");
+   background-image: url("./assets/Rayos-sol.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -63,59 +63,31 @@ img {
   background-size: cover;
 }
 
-#dibujo {
-  width: 20vw;
-  height: 20vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: cambiarelcolor 8s infinite;
+.sol {
+  width: 150px;          
+  height: 150px;         
+  background-color: #ffcc00; 
   border-radius: 50%;
-  position: absolute;
-  top: 10%;
-  right: 15%;
+  box-shadow: 0 0 50px #ff9900; 
+  animation: resplandor 2s infinite alternate;
+  
+  position: fixed;        
+  top: 70px;              
+  right: 70px;          
+  z-index: 1000;        
 }
 
-@keyframes cambiarelcolor {
-  0% { background-color: rgb(188, 100, 0); }
-  50% { background-color: rgb(247, 172, 21); }
-  100% { background-color: rgb(255, 238, 0); }
+@keyframes resplandor {
+  from { box-shadow: 0 0 30px #ffcc00; }
+  to { box-shadow: 0 0 60px #ff9900; }
 }
-
-.rayos {
-  position: absolute;
-  width: 30vw;
-  height: 30vw;
-  animation: girar 10s linear infinite;
-}
-.rayo {
-  position: absolute;
-  width: 4px;
-  height: 8vw;
-  background: orange;
-  top: 0;
-  left: 50%;
-  transform-origin: bottom center;
-}
-.rayo:nth-child(1) { transform: rotate(0deg); }
-.rayo:nth-child(2) { transform: rotate(60deg); }
-.rayo:nth-child(3) { transform: rotate(120deg); }
-.rayo:nth-child(4) { transform: rotate(180deg); }
-.rayo:nth-child(5) { transform: rotate(240deg); }
-.rayo:nth-child(6) { transform: rotate(300deg); }
-
-@keyframes girar {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
-
 
 .contenedor-pajaro {
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* inicia desde arriba */
-  height: 300px;           /* más alto para poder bajar el pájaro */
-  padding-top: 50px;       /* baja el pájaro visualmente */
+  align-items: flex-start; 
+  height: 300px;           
+  padding-top: 50px;     
 }
 
 .pajaro {
