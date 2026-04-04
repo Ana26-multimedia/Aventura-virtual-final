@@ -75,8 +75,8 @@ img {
 }
 
 @keyframes resplandor {
-  from { box-shadow: 0 0 30px #ffcc00; }
-  to { box-shadow: 0 0 60px #ff9900; }
+  from { box-shadow: 0 0 30px #ff7300; }
+  to { box-shadow: 0 0 60px #ffe100; }
 }
 
 .contenedor-pajaro {
@@ -166,11 +166,7 @@ img {
 
 @keyframes volar {
   0%   { transform: translateX(0) translateY(0) scale(2.5); }
-  100% { transform: translateX(400px) translateY(-200px) scale(2.5); }
-}
-
-.pajaro.volando {
-  animation: volar 3s linear forwards;
+  100% { transform: translateX(400px) translateY(-200px) scale(1.5); }
 }
 
 #bg-video {
@@ -270,6 +266,47 @@ img {
   0%   { transform: translateX(0) translateY(0) scale(2.5); }
   100% { transform: translateX(400px) translateY(-200px) scale(2.5); }
 }
+
+.luna {
+  position: fixed;
+  top: 100px;        
+  right: 50px;          
+  width: 170px;  
+  height: 170px;      
+  background: #f0e8c1;
+  border-radius: 50%;
+  box-shadow: 0 0 60px rgba(240,232,193,0.6); 
+  z-index: 1000;
+  animation: brillar 2s infinite alternate;
+}
+
+.luna::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 55%;                
+  width: 100%;
+  height: 100%;
+  background: #131734;      
+  border-radius: 50%;
+}
+
+
+.luna::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 25%;    
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+@keyframes brillar {
+  from { box-shadow: 0 0 30px rgba(240,232,193,0.4); }
+  to { box-shadow: 0 0 70px rgba(240,232,193,0.8); }
+}
+
 
 .pajaro.volando {
   animation: volar 3s linear forwards;
@@ -591,4 +628,43 @@ p {
 }
 .pajaro.volando {
   animation: volarCompleto 4s ease-in-out;
+}
+.pajaro {
+  position: absolute;
+  top: 50%;
+  left: -150px;
+  transform: translateY(-50%) scale(2.5);
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.pajaro.volando {
+  animation: volarAdelante 15s linear forwards; 
+}
+
+.pajaro {
+  position: absolute;
+  top: 50%;       
+  left: 10%;      
+  transform: translateY(-50%) scale(2.5);
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.pajaro2 {
+  position: absolute;
+  top: 50%;       
+  left: 90%;      
+  transform: translateY(-50%) scale(2.5) scaleX(-1); 
+  cursor: pointer;
+  z-index: 1000;
+}
+
+@keyframes volarTodaPantalla {
+  0% { transform: translateX(-150px) translateY(-50%) scale(2.5); }
+  100% { transform: translateX(120vw) translateY(-50%) scale(2.5); }
+}
+
+.pajaro.volando {
+  animation: volarTodaPantalla 10s linear forwards;
 }

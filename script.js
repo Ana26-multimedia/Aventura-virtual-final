@@ -40,3 +40,17 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 </script>
+
+
+const pajaro = document.querySelector('.pajaro');
+const pajaro2 = document.querySelector('.pajaro2');
+
+pajaro.addEventListener('click', () => {
+  pajaro.classList.remove('volando');
+  void pajaro.offsetWidth; 
+  pajaro.classList.add('volando');
+
+  pajaro2.classList.remove('volando2');
+  void pajaro2.offsetWidth;
+  pajaro2.classList.add('volando2');
+});
