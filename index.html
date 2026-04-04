@@ -1,70 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-<link rel="stylesheet" href="style.css">
-<script src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aventura Lumo</title>
 
-
-<head>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
-</head>
-
+</head  <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">>
 
 <body id="index">
-    <h1> ¡Bienvenid@s a esta aventura! </h1>
 
-    <br>
 
-    <a href="escena2.html">ir a escena 2 </a>
-    
-    <br>
+  <h1>¡Bienvenid@s a la aventura de Raluz!</h1>
+  
+    <a href="escena2.html">Ir a escena 2</a>
 
-    <br>
-    <br>
     <br>
     <br>
 
+  <p>Raluz despierta, empieza a volar y siente que hoy será un gran día ☀️💨.</p>
+  <p>Está listo para vivir una gran aventura.</p>
+  <p class="maquina">Raluz ve un atardecer rosado que nunca había visto...</p>
 
-<div class="contenedor-pajaro">
-  <div id="pajaro" class="pajaro">
-    <div class="cuerpo"></div>
-    <div class="cabeza"></div>
-    <div class="ojo"></div>
-    <div class="pico"></div>
-    <div class="ala"></div>
+<br>
+<br>
+<br>
+
+  <div class="contenedor-pajaro">
+    <div id="pajaro" class="pajaro">
+      <div class="cuerpo"></div>
+      <div class="cabeza"></div>
+      <div class="ojo"></div>
+      <div class="pico"></div>
+      <div class="ala"></div>
+    </div>
   </div>
-</div>
 
-<br>
-<br>
-<br>
-
-<div class="pajaro" id="pajaro"></div>
-
+  <div class="nube"></div>
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const pajaro = document.getElementById("pajaro");
+const pajaro = document.querySelector('.pajaro');
 
-  if (pajaro) {
-    pajaro.addEventListener("click", () => {
-      if (pajaro.classList.contains("volando")) return;
-      pajaro.classList.add("volando"); 
-    });
-
-    pajaro.addEventListener("animationend", () => {
-      window.location.href = "escena2.html";
-    });
-  }
+pajaro.addEventListener('click', () => {
+  pajaro.classList.add('volando');
 });
 </script>
-
-<div class="nube"></div>
-
-
 
 </body>
 </html>

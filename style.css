@@ -52,6 +52,9 @@ img {
 #escena4 h1,
 #escena4 a { color: white; }
 
+
+
+
 #escena5 {
   background-image: url("./assets/Sol.jpg");
   background-size: cover;
@@ -67,7 +70,7 @@ img {
   
   position: fixed;        
   top: 70px;              
-  right: 70px;          
+  right: 400px;          
   z-index: 1000;        
 }
 
@@ -138,6 +141,24 @@ img {
   animation: fly 0.4s infinite alternate;
 }
 
+
+@keyframes volar {
+  0% {
+    transform: translate(0, 0) scale(2.5);
+  }
+  25% {
+    transform: translate(100px, -80px) scale(2.5);
+  }
+  50% {
+    transform: translate(200px, -120px) scale(2.5);
+  }
+  75% {
+    transform: translate(260px, -100px) scale(2.5);
+  }
+  100% {
+    transform: translate(320px, -150px) scale(2.5);
+  }
+}
 @keyframes fly {
   from { transform: rotate(0deg); }
   to   { transform: rotate(-60deg); }
@@ -311,6 +332,14 @@ img {
   }
 }
 
+
+.contenedor-pajaro2 {
+  position: absolute;
+  top: 65%;
+  left: 75%;
+  transform: translateY(-50%);
+}
+
 .pajaro2 {
   position: relative;
   width: 100px;
@@ -323,7 +352,7 @@ img {
   position: absolute;
   width: 80px;
   height: 40px;
-  background: #3498db;
+  background:  #960dff;
   border-radius: 0 0 100px 100px;
   top: 20px;
 }
@@ -332,7 +361,7 @@ img {
   position: absolute;
   width: 35px;
   height: 35px;
-  background: #3498db;
+  background: #960dff;
   border-radius: 50%;
   left: 55px;
   top: 0;
@@ -342,9 +371,9 @@ img {
   position: absolute;
   width: 6px;
   height: 6px;
-  background: white;
+  background: rgb(78, 193, 231);
   border-radius: 50%;
-  left: 75px;
+  left: 20px;
   top: 10px;
 }
 
@@ -361,7 +390,7 @@ img {
   position: absolute;
   width: 40px;
   height: 25px;
-  background: #2980b9;
+  background: #b9086f;
   border-radius: 50% 50% 0 0;
   left: 20px;
   top: 15px;
@@ -375,8 +404,21 @@ img {
 }
 
 @keyframes volar2 {
-  0%   { transform: translateX(0) translateY(0) scale(2.5) scaleX(-1); }
-  100% { transform: translateX(400px) translateY(-200px) scale(2.5) scaleX(-1); }
+  0% {
+    transform: translate(0, 0) scale(2.5) scaleX(-1);
+  }
+  25% {
+    transform: translate(-100px, -60px) scale(2.5) scaleX(-1);
+  }
+  50% {
+    transform: translate(-200px, -40px) scale(2.5) scaleX(-1);
+  }
+  75% {
+    transform: translate(-300px, -80px) scale(2.5) scaleX(-1);
+  }
+  100% {
+    transform: translate(-400px, -60px) scale(2.5) scaleX(-1);
+  }
 }
 
 .pajaro.volando {
@@ -398,8 +440,15 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 350px;
+  height: 900px;
   perspective: 1000px;
+  
+}
+
+.contenedor-cometa {
+  position: absolute;
+  right: 50px;   
+  bottom: 0;  
 }
 
 .cometa {
@@ -443,5 +492,72 @@ img {
   100% { transform: translate(2, 3); }
 }
 
+p {
+  text-align: center;
+  font-size: 26px;
+  color: #2c3e50;
+  max-width: 650px;
+  margin: 15px auto;
+  line-height: 1.6;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 10px 15px;
+  border-radius: 10px;
+}
 
+#escena4 p {
+  text-align: right;   
+  margin-right: 50px;    
+}
 
+#escena4 h1 {
+  text-align: right;
+  margin-right: 50px;
+}
+
+body {
+  font-family: 'Handlee', cursive;
+}
+
+h1 {
+  font-family: 'Handlee', cursive;
+}
+
+p {
+  font-family: 'Handlee', cursive;
+}
+
+a {
+  font-size: 26px;
+  padding: 12px 25px;
+  background: linear-gradient(45deg, #2f94ff88, #e9a65a);
+  color: white;
+  border-radius: 20px;
+  text-decoration: none;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+
+a:hover {
+  transform: scale(1.1);
+}
+
+#escena4 h1 {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 40px;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+p {
+  animation: aparecer 2s ease;
+}

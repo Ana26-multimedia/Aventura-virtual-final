@@ -12,10 +12,23 @@
 <a href="escena4.html">Ir a escena anterior</a>
 <br>
 <br>
-<br>
-<br>
+
 <a href="escena6.html">Ir a escena 6</a>
 </html>
+
+<div class="contenedor-cometa">
+  <div class="cometa">
+    <div class="hilo"></div>
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
+<p>Raluz deciende un poco y vuelve a ver tierra firme, se siente más fuerte y vuela libre feliz por la aventura que acabo de tener.</p>
+
 
 <div class="contenedor-pajaro">
   <div class="pajaro">
@@ -33,6 +46,12 @@
   </div>
 </div>
 
+<script>
+const pajaro = document.querySelector('.pajaro');
 
+pajaro.addEventListener('click', () => {
+  pajaro.classList.add('volando');
+});
+</script>
 
 </body >

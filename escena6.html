@@ -1,263 +1,71 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Escena 6</title>
-<style>
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  overflow-x: hidden;
-}
-
-#bg-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  z-index: -1;
-}
-
-h1 {
-  text-align: center;
-  color: white;
-  position: relative;
-  z-index: 1;
-  margin-top: 30px;
-}
-
-a {
-  display: inline-block;
-  margin: 10px;
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-  position: relative;
-  z-index: 1;
-}
-
-.contenedor-pajaro,
-.contenedor-pajaro2 {
-  position: absolute;
-  z-index: 1;
-}
+<head <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escena 6</title>
 
 
-.contenedor-pajaro {
-  top: 40%;
-  left: 25%;
-  transform: translate(-50%, -50%);
-}
 
-.pajaro {
-  position: relative;
-  width: 100px;
-  height: 60px;
-  transform: scale(2.5);
-  cursor: pointer;
-}
-
-.cuerpo {
-  position: absolute;
-  width: 80px;
-  height: 40px;
-  background:  #962222;
-  border-radius: 0 0 100px 100px;
-  top: 20px;
-}
-
-.cabeza {
-  position: absolute;
-  width: 35px;
-  height: 35px;
-  background:  #962222;
-  border-radius: 50%;
-  left: 55px;
-  top: 0;
-}
-
-.ojo {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background: white;
-  border-radius: 50%;
-  left: 20px;
-  top: 10px;
-}
-
-.pico {
-  position: absolute;
-  border-left: 15px solid #f39c12;
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-  left: 88px;
-  top: 12px;
-}
-
-.ala {
-  position: absolute;
-  width: 40px;
-  height: 25px;
-  background: #ef6b6b;
-  border-radius: 50% 50% 0 0;
-  left: 20px;
-  top: 15px;
-  transform-origin: bottom;
-  animation: fly 0.4s infinite alternate;
-}
-
-@keyframes fly {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(-60deg); }
-}
-
-@keyframes volar {
-  0% { transform: translateX(0) translateY(0) scale(2.5); }
-  100% { transform: translateX(400px) translateY(-200px) scale(2.5); }
-}
-
-.pajaro.volando {
-  animation: volar 3s linear forwards;
-}
-
-.contenedor-pajaro2 {
-  top: 60%;
-  left: 70%;
-  transform: translate(-50%, -50%);
-}
-
-.pajaro2 {
-  position: relative;
-  width: 100px;
-  height: 60px;
-  transform: scale(2.5) scaleX(-1);
-  cursor: pointer;
-}
-
-.cuerpo2 {
-  position: absolute;
-  width: 80px;
-  height: 40px;
-  background: #a134db;
-  border-radius: 0 0 100px 100px;
-  top: 20px;
-}
-
-.cabeza2 {
-  position: absolute;
-  width: 35px;
-  height: 35px;
-  background: #db34a6;
-  border-radius: 50%;
-  left: 55px;
-  top: 0;
-}
-
-.ojo2 {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background: rgb(18, 215, 241);
-  border-radius: 50%;
-  left: 20px;
-  top: 10px;
-}
-
-.pico2 {
-  position: absolute;
-  border-left: 15px solid #f39c12;
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-  left: 88px;
-  top: 12px;
-}
-
-.ala2 {
-  position: absolute;
-  width: 40px;
-  height: 25px;
-  background: #db34a6;
-  border-radius: 50% 50% 0 0;
-  left: 20px;
-  top: 15px;
-  transform-origin: bottom;
-  animation: fly2 0.4s infinite alternate;
-}
-
-@keyframes fly2 {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(-60deg); }
-}
-
-@keyframes volar2 {
-  0% { transform: translateX(0) translateY(0) scale(2.5) scaleX(-1); }
-  100% { transform: translateX(400px) translateY(-200px) scale(2.5) scaleX(-1); }
-}
-
-.pajaro2.volando2 {
-  animation: volar2 3s linear forwards;
-}
-</style>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body id="escena6">
 
-<h1>Escena 6, Capítulo 6</h1>
+  <h1>Escena 6, capitulo 5</h1>
 
-<a href="escena5.html">Ir a escena 5</a>
-<br>
-<br>
-<br>
+  <div class="links">
+    <a href="escena5.html">Ir a escena 5</a>
+    <br>
+    <br>
 
-<a href="index.html">Ir al inicio</a>
-
-
-<div class="contenedor-pajaro">
-  <div class="pajaro" title="Haz click para que vuele">
-    <div class="cuerpo"></div>
-    <div class="cabeza">
-      <div class="ojo"></div>
-    </div>
-    <div class="pico"></div>
-    <div class="ala"></div>
+    <a href="index.html">Ir al inicio</a>
   </div>
-</div>
 
-
-<div class="contenedor-pajaro2">
-  <div class="pajaro2" title="Haz click para que vuele">
-    <div class="cuerpo2"></div>
-    <div class="cabeza2">
-      <div class="ojo2"></div>
-    </div>
-    <div class="pico2"></div>
-    <div class="ala2"></div>
+  <div class="texto">
+    <p>Raluz ve un atardecer rosado que nunca había visto. Se siente muy emocionado al encontrar a Mía.</p>
+    <p>Raluz está feliz de haber vivido esta gran aventura.</p>
   </div>
-</div>
 
 
-<video autoplay loop muted playsinline id="bg-video">
+  <div class="contenedor-pajaro">
+    <div class="pajaro">
+      <div class="cuerpo"></div>
+      <div class="cabeza">
+        <div class="ojo"></div>
+      </div>
+      <div class="pico"></div>
+      <div class="ala"></div>
+    </div>
+  </div>
+
+  <div class="contenedor-pajaro2">
+    <div class="pajaro2">
+      <div class="cuerpo2"></div>
+      <div class="cabeza2">
+        <div class="ojo2"></div>
+      </div>
+      <div class="pico2"></div>
+      <div class="ala2"></div>
+    </div>
+  </div>
+
+  <video autoplay loop muted playsinline id="bg-video">
     <source src="assets/video-atardecer.mp4" type="video/mp4">
-</video>
+  </video>
 
-<script>
+  <script>
+    const pajaro = document.querySelector('.pajaro');
+    const pajaro2 = document.querySelector('.pajaro2');
 
-const pajaro = document.querySelector('.pajaro');
-pajaro.addEventListener('click', () => {
-  pajaro.classList.add('volando');
-});
+    pajaro.addEventListener('click', () => {
+      pajaro.classList.add('volando');
+    });
 
-const pajaro2 = document.querySelector('.pajaro2');
-pajaro2.addEventListener('click', () => {
-  pajaro2.classList.add('volando2');
-});
-</script>
-
-
+    pajaro2.addEventListener('click', () => {
+      pajaro2.classList.add('volando2');
+    });
+  </script>
 
 </body>
 </html>

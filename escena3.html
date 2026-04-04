@@ -12,14 +12,12 @@
     <a href="escena2.html"> Volver a la escena anterior </a>
     <br>
     <br>
-    <br>
-<br>
     <a href="escena4.html"> Ir a escena 4</a>
     
     <br>
     <br>
     
-  
+
   <video id="bg-video" autoplay muted loop>
   <source src="./assets/video-nubes.mp4" type="video/mp4">
 </video>
@@ -27,7 +25,9 @@
 </video>
 
 <div class="contenido">
-  <h1>La historia del pequeño pajaro </h1>
+<p>Ahora Raluz siente que vuela como todo un experto, cada vez va mas alto. </p>
+
+
 </div>
 
 <div class="contenedor-pajaro">
@@ -40,6 +40,15 @@
   </div>
 </div>
 
+  <div class="nube"></div>
+
+  <script>
+const pajaro = document.querySelector('.pajaro');
+
+pajaro.addEventListener('click', () => {
+  pajaro.classList.add('volando');
+});
+</script>
 
 </body>
 </html>
