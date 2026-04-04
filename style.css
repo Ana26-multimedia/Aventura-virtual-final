@@ -91,7 +91,7 @@ img {
   position: relative;
   width: 100px;
   height: 60px;
-  transform: scale(2.5);
+  transform: scale(3);
   cursor: pointer;
 }
 
@@ -147,7 +147,7 @@ img {
     transform: translate(0, 0) scale(2.5);
   }
   25% {
-    transform: translate(100px, -80px) scale(2.5);
+    transform: translate(100px, -80px) scale(3.5);
   }
   50% {
     transform: translate(200px, -120px) scale(2.5);
@@ -421,10 +421,6 @@ img {
   }
 }
 
-.pajaro.volando {
-  animation: volar 3s linear alternate forwards;
-}
-
 .pajaro2.volando2 {
   animation: volar2 3s linear alternate forwards;
 }
@@ -560,4 +556,25 @@ a:hover {
 
 p {
   animation: aparecer 2s ease;
+}
+
+@keyframes volarCompleto {
+  0% {
+    transform: translate(0, 0) scale(2.5);
+  }
+
+  40% {
+    transform: translate(200px, -120px) scale(2.5);
+  }
+
+  60% {
+    transform: translate(200px, -120px) scale(2.5); /* se queda */
+  }
+
+  100% {
+    transform: translate(0, 0) scale(2.5); /* regresa */
+  }
+}
+.pajaro.volando {
+  animation: volarCompleto 4s ease-in-out;
 }
