@@ -34,7 +34,6 @@
 <p>Raluz despierta, empieza a volar y siente que hoy será un gran día ☀️💨.</p>
 <p>Está listo para vivir una gran aventura.</p>
 
-<!-- Pájaro -->
 <div class="contenedor-pajaro">
   <div id="pajaro" class="pajaro">
     <div class="cuerpo"></div>
@@ -47,14 +46,12 @@
 
 <div class="nube"></div>
 
-<!-- Banner de música -->
 <div id="banner-musica">🎵 Escuchar / Pausar Música 🎵</div>
 
-<!-- Audio -->
 <audio id="musica" src="assets/Volare.mp3" loop></audio>
 
 <script>
-// Mantener la animación del pájaro al hacer click
+
 const pajaro = document.getElementById('pajaro');
 pajaro.addEventListener('click', () => {
   pajaro.classList.add('volando');
@@ -63,17 +60,16 @@ pajaro.addEventListener('click', () => {
   }, 2000);
 });
 
-// Banner de música: reproducir / pausar
 const banner = document.getElementById('banner-musica');
 const musica = document.getElementById('musica');
 
 banner.addEventListener('click', () => {
   if (musica.paused) {
     musica.play();
-    banner.textContent = "⏸️ Pausar Música";
+    banner.textContent = "⏸️ Pausar Música 🎵";
   } else {
     musica.pause();
-    banner.textContent = "🎵 Escuchar Música";
+    banner.textContent = "🎵 Escuchar Música ⏯️";
   }
 });
 </script>
