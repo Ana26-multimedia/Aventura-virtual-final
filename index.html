@@ -1,50 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aventura Lumo</title>
+<head <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aventura Lumo</title>
+<link rel="stylesheet" href="style.css">
 
-  <link rel="stylesheet" href="style.css">
-</head  <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">>
+<style>
 
+#banner-musica {
+  position: fixed;
+  bottom: 20px; 
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffa502;
+  color: #fff;
+  padding: 15px 25px;
+  border-radius: 12px;
+  font-family: sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+  text-align: center;
+}
+</style>
+</head>
 <body id="index">
 
+<h1>¡Bienvenid@s a la aventura de Raluz!</h1>
+<a href="escena2.html">Ir a escena 2</a>
 
-  <h1>¡Bienvenid@s a la aventura de Raluz!</h1>
-  
-    <a href="escena2.html">Ir a escena 2</a>
+<p>Raluz despierta, empieza a volar y siente que hoy será un gran día ☀️💨.</p>
+<p>Está listo para vivir una gran aventura.</p>
 
-    <br>
-    <br>
-<br>
-<br>
-<br>
-<br>
-
-  <p>Raluz despierta, empieza a volar y siente que hoy será un gran día ☀️💨.</p>
-  <p>Está listo para vivir una gran aventura.</p
-
-<br>
-<br>
-<br>
-
-  <div class="contenedor-pajaro">
-    <div id="pajaro" class="pajaro">
-      <div class="cuerpo"></div>
-      <div class="cabeza"></div>
-      <div class="ojo"></div>
-      <div class="pico"></div>
-      <div class="ala"></div>
-    </div>
+<!-- Pájaro -->
+<div class="contenedor-pajaro">
+  <div id="pajaro" class="pajaro">
+    <div class="cuerpo"></div>
+    <div class="cabeza"></div>
+    <div class="ojo"></div>
+    <div class="pico"></div>
+    <div class="ala"></div>
   </div>
+</div>
 
-  <div class="nube"></div>
+<div class="nube"></div>
+
+<!-- Banner de música -->
+<div id="banner-musica">🎵 Escuchar / Pausar Música 🎵</div>
+
+<!-- Audio -->
+<audio id="musica" src="assets/Volare.mp3" loop></audio>
+
 <script>
-const pajaro = document.querySelector('.pajaro');
-
+// Mantener la animación del pájaro al hacer click
+const pajaro = document.getElementById('pajaro');
 pajaro.addEventListener('click', () => {
   pajaro.classList.add('volando');
+  setTimeout(() => {
+    pajaro.classList.remove('volando');
+  }, 2000);
+});
+
+// Banner de música: reproducir / pausar
+const banner = document.getElementById('banner-musica');
+const musica = document.getElementById('musica');
+
+banner.addEventListener('click', () => {
+  if (musica.paused) {
+    musica.play();
+    banner.textContent = "⏸️ Pausar Música";
+  } else {
+    musica.pause();
+    banner.textContent = "🎵 Escuchar Música";
+  }
 });
 </script>
 

@@ -3,55 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Escena 5</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body id="escena5">
-    <h1>Escena 5, capitulo 5</h1>
+    <h1>Escena 5, capítulo 5</h1>
 
-<a href="escena4.html">Ir a escena anterior</a>
+    <a href="escena4.html">Ir a escena anterior</a>
+    <br><br>
+    <a href="escena6.html">Ir a escena 6</a>
+
+    <!-- Cometa -->
+    <div class="contenedor-cometa">
+        <div class="cometa">
+            <div class="hilo"></div>
+        </div>
+    </div>
+<br>
+<br>
 <br>
 <br>
 
-<a href="escena6.html">Ir a escena 6</a>
+    <p>Raluz desciende un poco y vuelve a ver tierra firme, se siente más fuerte y vuela libre feliz por la aventura que acaba de tener.</p>
+
+    <div class="contenedor-pajaro">
+        <div class="pajaro">
+            <div class="pico"></div>
+            <div class="cabeza"></div>
+            <div class="ojo"></div>
+            <div class="cuerpo"></div>
+            <div class="ala"></div>
+        </div>
+    </div>
+
+    <script>
+      
+        const pajaro = document.querySelector('.pajaro');
+        pajaro.addEventListener('click', () => {
+            pajaro.classList.add('volando');
+            setTimeout(() => {
+                pajaro.classList.remove('volando');
+            }, 2000);
+        });
+
+        const cometas = document.querySelectorAll('.cometa');
+        cometas.forEach(cometa => {
+            cometa.addEventListener('click', () => {
+                cometa.classList.add('volar');
+                setTimeout(() => {
+                    cometa.classList.remove('volar');
+                }, 2000);
+            });
+        });
+    </script>
+</body>
 </html>
-
-<div class="contenedor-cometa">
-  <div class="cometa">
-    <div class="hilo"></div>
-  </div>
-</div>
-
-<br>
-<br>
-<br>
-<br>
-
-<p>Raluz deciende un poco y vuelve a ver tierra firme, se siente más fuerte y vuela libre feliz por la aventura que acabo de tener.</p>
-
-
-<div class="contenedor-pajaro">
-  <div class="pajaro">
-    <div class="pico"></div>
-    <div class="cabeza"></div>
-    <div class="ojo"></div>
-    <div class="cuerpo"></div>
-    <div class="ala"></div>
-  </div>
-</div>
-
-<div class="contenedor-cometa">
-  <div class="cometa">
-    <div class="hilo"></div>
-  </div>
-</div>
-
-<script>
-const pajaro = document.querySelector('.pajaro');
-
-pajaro.addEventListener('click', () => {
-  pajaro.classList.add('volando');
-});
-</script>
-
-</body >
