@@ -10,29 +10,64 @@
 
 #banner-musica {
   position: fixed;
-  bottom: 20px; 
+  bottom: 100px; 
   left: 50%;
   transform: translateX(-50%);
-  background-color: #ffa502;
+  background: #feca57;
   color: #fff;
-  padding: 15px 25px;
-  border-radius: 12px;
-  font-family: sans-serif;
-  font-weight: bold;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-family: 'Handlee', cursive;
+  font-size: 18px;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   z-index: 1000;
   text-align: center;
+  transition: all 0.3s ease;
 }
+
+#banner-musica:hover {
+  transform: translateX(-50%) scale(1.1);
+}
+
+#banner-musica:active {
+  transform: translateX(-50%) scale(0.95);
+}
+
+#btn-narracion {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #70a1ff;
+  color: white;
+  padding: 14px 25px;
+  border-radius: 25px;
+  font-family: 'Handlee', cursive;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: 0.3s;
+  z-index: 1000;
+}
+
+#btn-narracion:hover {
+  transform: translateX(-50%) scale(1.1);
+}
+
+#btn-narracion:active {
+  transform: translateX(-50%) scale(0.95);
+}
+
 </style>
 </head>
+
 <body id="index">
 
 <h1>¡Bienvenid@s a la aventura de Raluz!</h1>
 <a href="escena2.html">Ir a escena 2</a>
 
-<p>Raluz, empieza a volar y siente que hoy será un gran día ☀️.</p>
-<p>Está listo para vivir una gran aventura.</p>
+<p>Raluz empieza a volar y siente que hoy será un gran día ☀️.</p>
+<p>Su corazón late rápido de emoción… ¡está listo para vivir una gran aventura!</p>
 
 <div class="contenedor-pajaro">
   <div id="pajaro" class="pajaro">
@@ -43,16 +78,16 @@
     <div class="ala"></div>
   </div>
 </div>
-<br>
-<br>
-<br>
-<br>
 
 <div class="nube"></div>
 
-<div id="banner-musica">🎵 Escuchar / Pausar Música 🎵</div>
 
+<div id="banner-musica">🎶 Escuchar Música 🎶</div>
 <audio id="musica" src="assets/Volare.mp3" loop></audio>
+
+
+<div id="btn-narracion">🎙️ Narración</div>
+<audio id="narracion" src="./assets/Escena1-Audio.mp3"></audio>
 
 <script>
 
@@ -70,12 +105,26 @@ const musica = document.getElementById('musica');
 banner.addEventListener('click', () => {
   if (musica.paused) {
     musica.play();
-    banner.textContent = "⏸️ Pausar Música 🎵";
+    banner.textContent = "⏸️ Pausar Música 🎶";
   } else {
     musica.pause();
-    banner.textContent = "🎵 Escuchar Música ⏯️";
+    banner.textContent = "🎶 Escuchar Música 🎶";
   }
 });
+
+const btnNarracion = document.getElementById('btn-narracion');
+const narracion = document.getElementById('narracion');
+
+btnNarracion.addEventListener('click', () => {
+  if (narracion.paused) {
+    narracion.play();
+    btnNarracion.textContent = "⏸️ Pausar narración";
+  } else {
+    narracion.pause();
+    btnNarracion.textContent = "🎙️ Narración";
+  }
+});
+
 </script>
 
 </body>

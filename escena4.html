@@ -3,28 +3,48 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Cohete</title>
+  <title>Escena 4</title>
   <link rel="stylesheet" href="style.css">
-</head>
 
-<script src="script.js"></script>
+  <script src="script.js" defer></script>
+
+  <style>
+    #btn-narracion {
+      position: fixed;
+      bottom: 50px;
+      left: 30%;
+      transform: translateX(-50%);
+      background: #70a1ff;
+      color: white;
+      padding: 14px 25px;
+      border-radius: 25px;
+      font-family: 'Handlee', cursive;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.3s;
+      z-index: 1000;
+    }
+
+    #btn-narracion:hover {
+      transform: translateX(-50%) scale(1.1);
+    }
+
+    #btn-narracion:active {
+      transform: translateX(-50%) scale(0.95);
+    }
+  </style>
+</head>
 
 <body id="escena4">
 
+<h1 style="text-align:center;">Escena 4, capítulo 4</h1>
 
-  <center>   <h1>Escena 4, capítulo 4</h1> </center>
+<a href="escena3.html">Volver a escena anterior</a><br><br>
+<a href="escena5.html">Ir a escena 5</a>
 
-  <a href="escena3.html">Volver a escena anterior</a><br><br>
-  <br>
-  <a href="escena5.html">Ir a escena 5</a>
+<br><br>
 
-
-<br> 
-<br>
-<br>
-<br>
-
-  <button id="launchBtn">🚀 Despegar 🔥</button>
+<button id="launchBtn">🚀 Despegar 🔥</button>
 
 <div class="rocket-container" id="cohete">
   <div class="rocket">
@@ -37,17 +57,6 @@
   </div>
 </div>
 
-<script>
-  const cohete = document.getElementById("cohete");
-  const boton = document.getElementById("launchBtn");
-
-  boton.addEventListener("click", () => {
-    cohete.classList.remove("despegar");
-    void cohete.offsetWidth;
-    cohete.classList.add("despegar");
-  });
-</script>
-
 <div class="contenedor-pajaro">
   <div class="pajaro">
     <div class="pico"></div>
@@ -58,18 +67,49 @@
   </div>
 </div>
 
- <div class="luna"></div>
+<div class="luna"></div>
 
-  <p>El cielo se oscurece y Raluz piensa: "esto no estaba en mis planes…"</p>
- <p>Pues, Raluz voló tan alto que llegó hasta el espacio y se encontró con la tripulación del Artemis II 👨‍🚀👨‍🚀👨‍🚀👩🏻‍🚀</p>
-</div>
+<p>De pronto, el cielo se oscurece.</p>
+<p>Raluz se detiene un momento y piensa: “Esto no estaba en mis planes…”</p>
+<p>Raluz vuela tan alto que… ¡llega hasta el espacio! 🌌</p>
+<p>Allí se encuentra con la tripulación del Artemis II 👨‍🚀👩‍🚀.
+  Que no pueden creer lo que ven un  “¡Un pajarito astronauta!”
+</p>
+
+<div id="btn-narracion">🎙️ Narración</div>
 
 
-  <script>
-const pajaro = document.querySelector('.pajaro');
+<audio id="narracion" src="assets/Escena4-Audio.mp3"></audio>
 
-pajaro.addEventListener('click', () => {
-  pajaro.classList.add('volando');
-});
+<script>
 
+const cohete = document.getElementById("cohete");
+const boton = document.getElementById("launchBtn");
+
+if (boton && cohete) {
+  boton.addEventListener("click", () => {
+    cohete.classList.remove("despegar");
+    void cohete.offsetWidth;
+    cohete.classList.add("despegar");
+  });
+}
+
+const btnNarracion = document.getElementById('btn-narracion');
+const narracion = document.getElementById('narracion');
+
+if (btnNarracion && narracion) {
+  btnNarracion.addEventListener('click', () => {
+    if (narracion.paused) {
+      narracion.load(); // 
+      narracion.play();
+      btnNarracion.textContent = "⏸️ Pausar narración";
+    } else {
+      narracion.pause();
+      btnNarracion.textContent = "🎙️ Narración";
+    }
+  });
+}
 </script>
+
+</body>
+</html>

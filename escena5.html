@@ -13,7 +13,6 @@
     <br><br>
     <a href="escena6.html">Ir a escena 6</a>
 
-    <!-- Cometa -->
     <div class="contenedor-cometa">
         <div class="cometa">
             <div class="hilo"></div>
@@ -26,8 +25,34 @@
 <br>
 <br>
 
-  <p>Raluz desciende un poco y vuelve a ver tierra firme, se siente más fuerte y vuela libre, feliz por la aventura que esta teniendo.</p>
+  <p>Raluz empieza a bajar poco a poco riendose hasta ver la tierra otra vez.</p>
+<p>Se siente más fuerte, libre y muy orgulloso de sí mismo.</p>
 
+<style>
+    #btn-narracion {
+      position: fixed;
+      bottom: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #70a1ff;
+      color: white;
+      padding: 14px 25px;
+      border-radius: 25px;
+      font-family: 'Handlee', cursive;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.3s;
+      z-index: 1000;
+    }
+
+    #btn-narracion:hover {
+      transform: translateX(-50%) scale(1.1);
+    }
+
+    #btn-narracion:active {
+      transform: translateX(-50%) scale(0.95);
+    }
+  </style>
 
  <div class="contenedor-pajaro">
         <div class="pajaro">
@@ -41,8 +66,10 @@
 <br>
 <br>
 <br>
-<br>
-<br>
+
+<div id="btn-narracion">🎙️ Narración</div>
+
+<audio id="narracion" src="assets/Escena5-Audio.mp3"></audio>
   
     <script>
       
@@ -63,6 +90,22 @@
                 }, 2000);
             });
         });
+
+        const btnNarracion = document.getElementById('btn-narracion');
+const narracion = document.getElementById('narracion');
+
+if (btnNarracion && narracion) {
+  btnNarracion.addEventListener('click', () => {
+    if (narracion.paused) {
+      narracion.load(); // 
+      narracion.play();
+      btnNarracion.textContent = "⏸️ Pausar narración";
+    } else {
+      narracion.pause();
+      btnNarracion.textContent = "🎙️ Narración";
+    }
+  });
+}
     </script>
 
 </body>

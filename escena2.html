@@ -1,37 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-<link rel="stylesheet" href="style.css">
-<script src="script.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Escena 2</title>
 
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+
+<style>
+#btn-narracion {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #70a1ff;
+  color: white;
+  padding: 14px 25px;
+  border-radius: 25px;
+  font-family: 'Handlee', cursive;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: 0.3s;
+  z-index: 1000;
+}
+
+#btn-narracion:hover {
+  transform: translateX(-50%) scale(1.1);
+}
+
+#btn-narracion:active {
+  transform: translateX(-50%) scale(0.95);
+}
+</style>
 
 </head>
-<body >
 
-  
-  <div id="fondo-escena2"></div>
+<body>
 
+<div id="fondo-escena2"></div>
 
-    <h1> Escena 2, capitulo 2 </h1>
-  
-     <a href="index.html"> Ir a escena anterior </a>
-     <br>
-     <a href="escena3.html"> Ir a escena 3  </a>
+<h1>Escena 2, capítulo 2</h1>
 
-     <br>
-     <br>
+<a href="index.html">Ir a escena anterior</a>
+<br>
+<a href="escena3.html">Ir a escena 3</a>
 
-     <div class="sol"></div>
-     
-     <br>
-     <br>
-  <p>Por primera vez, Raluz se atreve a volar más lejos que nunca.</p>
+<br>
 
-  <div class="contenedor-pajaro">
-  <div class="pajaro">
+<div class="sol"></div>
+
+<br>
+
+<p>Por primera vez, Raluz se atreve a volar más lejos que nunca.</p>
+<p>Mira hacia abajo y piensa: “¡Woooo, qué alto estoy!”</p>
+
+<div class="contenedor-pajaro">
+  <div id="pajaro" class="pajaro">
     <div class="pico"></div>
     <div class="cabeza"></div>
     <div class="ojo"></div>
@@ -40,12 +66,27 @@
   </div>
 </div>
 
-  <script>
-const pajaro = document.querySelector('.pajaro');
 
-pajaro.addEventListener('click', () => {
-  pajaro.classList.add('volando');
-});
+<div id="btn-narracion">🎙️ Escuchar narración</div>
+
+<audio id="narracion" src="assets/Escena2-Audio.mp3"></audio>
+
+<script>
+const btnNarracion = document.getElementById('btn-narracion');
+const narracion = document.getElementById('narracion');
+
+if (btnNarracion && narracion) {
+  btnNarracion.addEventListener('click', () => {
+    if (narracion.paused) {
+      narracion.play();
+      btnNarracion.textContent = "⏸️ Pausar narración";
+    } else {
+      narracion.pause();
+      btnNarracion.textContent = "🎙️ Escuchar narración";
+    }
+  });
+}
 </script>
 
 </body>
+</html>
