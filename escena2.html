@@ -86,6 +86,15 @@ if (btnNarracion && narracion) {
     }
   });
 }
+
+const pajaro = document.getElementById('pajaro');
+pajaro.addEventListener('click', () => {
+  pajaro.classList.add('volando');
+  setTimeout(() => {
+    pajaro.classList.remove('volando');
+  }, 15000);
+});
+
 </script>
 
 </body>
