@@ -1,7 +1,6 @@
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
-  // COHETE
   const cohete = document.getElementById("cohete");
   const boton = document.getElementById("launchBtn");
 
@@ -21,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // PÁJARO
   const pajaro = document.getElementById("pajaro");
   const pajaro2 = document.querySelector(".pajaro2");
 
@@ -43,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 🎙️ NARRACIÓN
+  // 
   const btnNarracion = document.getElementById('btn-narracion');
   const narracion = document.getElementById('narracion');
 

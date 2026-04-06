@@ -693,3 +693,8 @@ p {
 #btn-narracion:active {
   transform: translateX(-50%) scale(0.95);
 }
+ @media(max-width:600px) {
+    .pajaro {
+  transform: translateY(-50%) scale(1);
+ }
+}
